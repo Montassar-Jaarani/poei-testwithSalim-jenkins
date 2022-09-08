@@ -9,6 +9,8 @@ public class HomePage {
 
     private WebDriver driver;
     private By acceptCookieSelector = By.cssSelector("[data-cel-widget=sp-cc-accept]");
+    private By searchBarSelector = By.cssSelector("[aria-label=Rechercher]");
+    private By loupeButtonSelector = By.cssSelector("[type=submit]");
 
     private final int TIMEOUT_COOKIE = 6;
 
@@ -21,4 +23,13 @@ public class HomePage {
         WebElement buttonCookie = wait.until(ExpectedConditions.visibilityOfElementLocated(acceptCookieSelector));
         buttonCookie.click();
     }
+
+    public void searchWithButton(String keyword){
+        WebElement searchBar = driver.findElement(searchBarSelector);
+        searchBar.sendKeys(keyword);
+
+        WebElement loupeButton = driver.findElement(loupeButtonSelector);
+        loupeButton.click();
+    }
+
 }

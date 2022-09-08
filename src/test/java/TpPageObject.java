@@ -25,6 +25,9 @@ public class TpPageObject {
     public void testPO() {
         HomePage homePage = new HomePage(driver);
         homePage.acceptCookie();
+        homePage.searchWithButton( "Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
+
+
 
     }
 }
