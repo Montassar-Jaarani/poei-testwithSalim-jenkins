@@ -31,5 +31,11 @@ public class TpPageObject {
         SearchResultPage searchResultPage = new SearchResultPage(driver);
         searchResultPage.openSearchResult(0);
 
+
+        ProductPage productPage = new ProductPage(driver);
+        productPage.addToCart();
+        productPage.refuseAppleCare();
+        productPage.openCart();
+
     }
 }

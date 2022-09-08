@@ -26,13 +26,6 @@ public class SearchResultPage {
         resultatList.get(0).click();
     }
 
-    public void searchWithButton(String keyword){
-        WebElement searchBar = driver.findElement(searchBarSelector);
-        searchBar.sendKeys(keyword);
-
-        WebElement loupeButton = driver.findElement(loupeButtonSelector);
-        loupeButton.click();
-    }
 
 
 
