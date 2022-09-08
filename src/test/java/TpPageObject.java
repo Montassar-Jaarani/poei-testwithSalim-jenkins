@@ -28,6 +28,8 @@ public class TpPageObject {
         homePage.searchWithButton( "Apple iPhone 13 Pro Max (256 Go) - Vert Alpin");
 
 
+        SearchResultPage searchResultPage = new SearchResultPage(driver);
+        searchResultPage.openSearchResult(0);
 
     }
 }
