@@ -10,10 +10,9 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static java.lang.Thread.currentThread;
 import static java.lang.Thread.sleep;
 
-public class Tp1 {
+public class Tp1Test {
 
     WebDriver driver;
     @BeforeTest
