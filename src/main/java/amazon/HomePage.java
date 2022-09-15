@@ -1,4 +1,4 @@
-package amazon;
+package main.java.amazon;
 
 import java.time.Duration;
 

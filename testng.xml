@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="Test Basics 1">
     <classes>
-        <class name="TpPageObjectTest"/>
+        <class name="test.java.TpPageObjectTest"/>
     </classes>
     </test>
 </suite>

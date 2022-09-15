@@ -60,7 +60,7 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-        </plugins>on a rajoute
+        </plugins>
     </build>
 
 
