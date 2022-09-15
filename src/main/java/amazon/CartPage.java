@@ -46,6 +46,10 @@ public class CartPage {
         return couleur.getText();
     }
 
+    /**
+     * une méthode qui retourne
+     * @return
+     */
     public String  getFirstProductConfiguration() {
         List<WebElement> informations = driver.findElements(firstProdConfigSelector);
         WebElement configuration = informations.get(2);

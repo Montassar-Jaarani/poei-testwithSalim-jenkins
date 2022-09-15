@@ -2,32 +2,27 @@ import amazon.CartPage;
 import amazon.HomePage;
 import amazon.ProductPage;
 import amazon.SearchResultPage;
+import commun.SetupTeardown;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TpPageObjectTest {
+import java.net.MalformedURLException;
+import java.net.URL;
 
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setup() {
-        driver = new ChromeDriver();
-        driver.get("https://www.amazon.fr/");
-        driver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
-
-    }
+public class TpPageObjectTest extends SetupTeardown {
 
     @Test
     public void testPO() {
