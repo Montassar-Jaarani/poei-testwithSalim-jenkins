@@ -8,9 +8,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 
 public class SetupTeardown {
 
@@ -64,9 +70,29 @@ public class SetupTeardown {
     }
 
     @AfterMethod
-    public void teardown() {
+    public void teardown(ITestResult result) throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
         driver.quit();
 
+        ImportResultsToXray importResultsToXray =new ImportResultsToXray();
+
+        if(result.getStatus() == ITestResult.SUCCESS)
+        {
+            System.out.println("passed **");
+            importResultsToXray.generateJsonResults("PASSED");
+
+        }
+        else if(result.getStatus() == ITestResult.FAILURE)
+        {
+            System.out.println("Failed **");
+            importResultsToXray.generateJsonResults("Failed");
+
+        }
+        else if(result.getStatus() == ITestResult.SKIP ){
+
+            System.out.println("Skiped**");
+            importResultsToXray.generateJsonResults("Skiped");
+        }
+        importResultsToXray.RemonteResultats();
     }
 
 

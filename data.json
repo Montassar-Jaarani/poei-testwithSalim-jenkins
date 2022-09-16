@@ -1,0 +1,11 @@
+{
+  "info" : {
+    "summary" : "Executed by Montassar Jaarani",
+    "description" : "This execution is automatically"
+  },
+  "tests" : [ {
+    "testKey" : "POEI22-683",
+    "comment" : "Successful execution",
+    "status" : "PASSED"
+  } ]
+}
